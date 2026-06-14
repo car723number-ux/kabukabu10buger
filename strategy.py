@@ -74,7 +74,7 @@ def detect_attack_points(df):
 
     psych_base  = _round_to_psych(c_now)
     psych_lines = sorted({
-        psych_base - _round_to_psych(c_now) % _round_to_psych(c_now, 1000) * 0,  # placeholder
+        psych_base - (_round_to_psych(c_now) % (_round_to_psych(c_now, 1000) or 1)) * 0,  # placeholder
         psych_base,
         psych_base + (_round_to_psych(c_now, None) if False else 0),
     })
